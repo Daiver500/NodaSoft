@@ -34,10 +34,14 @@ main {
   box-sizing: border-box;
 }
 
+.button {
+  cursor: pointer;
+}
+
 .button:hover,
 .button:focus {
   color: #000;
-  background-color: #fff;
+  background-color: grey;
   border: 1px solid #000;
 }
 
@@ -83,11 +87,13 @@ main {
 }
 
 .header__link {
-  padding: 11px 15px;
+  padding: 9px 15px;
   color: #fff;
   background-color: #a5c7f9;
   text-decoration: none;
   border-radius: 5px;
+  font-size: 20px;
+  line-height: 23px;
 }
 
 .header,
@@ -175,4 +181,50 @@ main {
 .footer {
   padding: 50px 0 50px 30px;
   flex-grow: 1;
+}
+
+/* ------Modal----- */
+
+.modal__inner {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  min-height: 400px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background-color: #fff;
+  padding: 35px;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #e5e5e5;
+}
+
+.modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #7faff6;
+  border: none;
+  border-radius: 5px;
+  width: 43px;
+  height: 39px;
+}
+
+.modal__close svg {
+  color: #fff;
+  width: 13px;
+  height: 23px;
+}
+
+@media (max-width: 767px) {
+  .modal__inner {
+    width: 100%;
+  }
 }

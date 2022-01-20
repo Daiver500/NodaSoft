@@ -215,6 +215,9 @@ main {
   border-radius: 5px;
   width: 43px;
   height: 39px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal__close svg {

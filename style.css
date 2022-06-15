@@ -7,25 +7,36 @@
   src:
     local("Rajdhani"),
     local("Rajdhani"),
-    url("../src/fonts/Rajdhani.woff2") format("woff2"), /* Super Modern Browsers */
-    url("../src/fonts/Rajdhanibold.woff") format("woff"); /* Modern Browsers */
+    url("fonts/Rajdhani.woff2") format("woff2"), /* Super Modern Browsers */
+    url("fonts/Rajdhanibold.woff") format("woff"); /* Modern Browsers */
 }
 
 /* ------Global----- */
 
+html {
+  height: 100%;
+}
+
 body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
   font-family: "Rajdhani", "Arial", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 18px;
-  margin: 0;
+}
+
+header,
+footer {
+  flex-shrink: 0;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   background-color: #c0dbd9;
+  flex-grow: 1;
 }
 
 *,
@@ -56,6 +67,7 @@ main {
 /* ------Container----- */
 
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
@@ -63,17 +75,15 @@ main {
 
 @media (max-width: 1023px) {
   .container {
-    max-width: 1023px;
+    padding: 0 30px;
   }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 767px) {
   .container {
-    max-width: 719px;
+    padding: 0 20px;
   }
 }
-
-/* ------Blocks----- */
 
 /* ------Header----- */
 
@@ -147,15 +157,18 @@ main {
 }
 
 /* ------Small-blocks----- */
-.big-blocks,
-.small-blocks {
-  flex-grow: 20;
-}
 
 .small-blocks {
   padding: 30px;
   background-color: #88b5bf;
   margin-bottom: 100px;
+}
+
+@media (max-width: 767px) {
+  .small-blocks {
+    padding: 10px;
+    margin-bottom: 50px;
+  }
 }
 
 .small-blocks__list {
@@ -166,6 +179,18 @@ main {
   justify-items: center;
   margin: 0;
   grid-gap: 30px;
+}
+
+@media (max-width: 1023px) {
+  .small-blocks__list {
+    grid-template-columns: repeat(auto-fit, minmax(139px, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .small-blocks__list {
+    grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
+  }
 }
 
 .small-blocks__item {
@@ -180,7 +205,6 @@ main {
 
 .footer {
   padding: 50px 0 50px 30px;
-  flex-grow: 1;
 }
 
 /* ------Modal----- */
